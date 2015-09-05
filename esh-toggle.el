@@ -7,7 +7,7 @@
 ;; Created: 19 Nov 1998
 ;; Version: 2.0
 ;; Keywords: processes
-;; X-URL: http://www.gci-net.com/users/j/johnw/eshell.html
+;; X-URL: https://github.com/thierryvolpiatto/esh-toggle
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
