@@ -16,11 +16,11 @@ This is done in an "intelligent" way.  Features are:
    eshell to the directory where your current buffers file exists;
    just call eshell-toggle-cd instead of eshell-toggle.
 
- - You can convinently choose if you want to have the eshell in
+ - You can conveniently choose if you want to have the eshell in
    another window or in the whole frame.  Just invoke eshell-toggle
    again to get the eshell in the whole frame.
 
 This file has been tested under Emacs 20.2.
 
-To use, call the functions `eshell-toggle' or `eshell-toggle-cd'.
+To use, call the functions `eshell-toggle` or `eshell-toggle-cd`.
 It's most helpful to bind these to a key.
