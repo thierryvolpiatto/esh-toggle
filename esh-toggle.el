@@ -1,8 +1,8 @@
 ;;; esh-toggle --- toggle to and from the *eshell* buffer
 
-;; Copyright (C) 1997, 1998, 2000, 2001 Mikael Sjödin (mic@docs.uu.se)
+;; Copyright (C) 1997, 1998, 2000, 2001 Mikael SjÃ¶din (mic@docs.uu.se)
 
-;; Author: Mikael Sjödin <mic@docs.uu.se>
+;; Author: Mikael SjÃ¶din <mic@docs.uu.se>
 ;;         John Wiegley <johnw@gnu.org>
 ;; Created: 19 Nov 1998
 ;; Version: 2.0
@@ -175,5 +175,11 @@ window configuration then `switch-buffer-other-window')"
 	  (other-window 1)))))
 
 (provide 'esh-toggle)
+
+;; Local Variables:
+;; byte-compile-warnings: (not cl-functions obsolete)
+;; coding: utf-8
+;; indent-tabs-mode: nil
+;; End:
 
 ;;; esh-toggle.el ends here
