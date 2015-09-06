@@ -1,4 +1,4 @@
-;;; esh-toggle --- toggle to and from the *eshell* buffer
+;;; esh-toggle.el --- toggle to and from the *eshell* buffer
 
 ;; Copyright (C) 1997, 1998, 2000, 2001 Mikael Sjödin (mic@docs.uu.se)
 
@@ -57,6 +57,8 @@
 ;; helpful sugestions.
 
 ;;; User Variables:
+
+(declare-function eshell-send-input "esh-mode.el" (&optional use-region queue-p no-newline))
 
 (defvar eshell-toggle-goto-eob t
   "*If non-nil `eshell-toggle' moves point to end of Eshell buffer.
