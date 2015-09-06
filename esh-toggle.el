@@ -176,10 +176,5 @@ window configuration then `switch-buffer-other-window')"
 
 (provide 'esh-toggle)
 
-;; Local Variables:
-;; byte-compile-warnings: (not cl-functions obsolete)
-;; coding: utf-8
-;; indent-tabs-mode: nil
-;; End:
 
 ;;; esh-toggle.el ends here
