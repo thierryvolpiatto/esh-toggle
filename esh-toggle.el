@@ -131,17 +131,17 @@ command into the eshell, where DIR is the directory of the current
 buffer.
 Stores the window cofiguration before creating and/or switching window."
   (setq eshell-toggle-pre-eshell-win-conf (current-window-configuration))
-  (let ((eshell-buffer (get-buffer "*eshell*"))
-        (cd-command
+  (let* ((eshell-buffer (get-buffer "*eshell*"))
          ;; Find out which directory we are in (the method differs for
          ;; different buffers)
-         (or (and make-cd
-                  (buffer-file-name)
-                  (file-name-directory (buffer-file-name))
-                  (concat "cd " (file-name-directory (buffer-file-name))))
-             (and make-cd
-                  list-buffers-directory
-                  (concat "cd " list-buffers-directory)))))
+         (cd-dir (and make-cd
+                      (or (and (buffer-file-name)
+                               (file-name-directory (buffer-file-name)))
+                          ;; A dired buffer.
+                          list-buffers-directory)))
+         (esh-dir (and eshell-buffer (with-current-buffer eshell-buffer
+                                       default-directory)))
+         (cd-command (and cd-dir (concat "cd " cd-dir))))
     ;; Switch to an existin eshell if one exists, otherwise switch to
     ;; another window and start a new eshell
     (if eshell-buffer
@@ -156,7 +156,7 @@ Stores the window cofiguration before creating and/or switching window."
         (error (switch-to-buffer "*eshell*"))))
     (if (or cd-command eshell-toggle-goto-eob)
         (goto-char (point-max)))
-    (if cd-command
+    (if (and cd-command (not (file-equal-p cd-dir esh-dir)))
         (progn
           (insert cd-command)
           (if eshell-toggle-automatic-cd
