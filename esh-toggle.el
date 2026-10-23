@@ -1,4 +1,4 @@
-;;; esh-toggle.el --- toggle to and from the *eshell* buffer
+;;; esh-toggle.el --- toggle to and from the *eshell* buffer -*- lexical-binding: t -*-
 
 ;; Copyright (C) 1997, 1998, 2000, 2001 Mikael Sjödin (mic@docs.uu.se)
 
