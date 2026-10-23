@@ -156,7 +156,7 @@ Stores the window cofiguration before creating and/or switching window."
         (error (switch-to-buffer "*eshell*"))))
     (if (or cd-command eshell-toggle-goto-eob)
         (goto-char (point-max)))
-    (if (and cd-command (not (file-equal-p cd-dir esh-dir)))
+    (if (and cd-command (not (and esh-dir (file-equal-p cd-dir esh-dir))))
         (progn
           (insert cd-command)
           (if eshell-toggle-automatic-cd
