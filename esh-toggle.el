@@ -151,7 +151,7 @@ Stores the window cofiguration before creating and/or switching window."
       ;; to do with my eshell-mode-hook which inserts text into the
       ;; newly created eshell-buffer and thats not allways a good
       ;; idea).
-      (condition-case the-error
+      (condition-case _err
           (eshell)
         (error (switch-to-buffer "*eshell*"))))
     (if (or cd-command eshell-toggle-goto-eob)
